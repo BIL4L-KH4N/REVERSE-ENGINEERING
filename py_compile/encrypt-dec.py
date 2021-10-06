@@ -25,28 +25,7 @@ def juttbadshah():
     system('clear')
     boyprint(logo)
     file = raw_input('\x1b[1;97mnexample > /sdcard/folder/file.py\n\nName File > ')
-    print '\x1b[1;92mJutt Badshah Converting Your Script\x1b[0;97m'
-    time.sleep(5)
-    print '\x1b[1;93mEnc Has Been Done File Name jutt-enc.py\x1b[0;97m'
-    jutt = open(file).read()
-    file = open('jutt-enc.py', 'w')
-    file.write('juttbadshah=(\n')
-    for i in range(3000):
-        file.write('"Jutt Badshah","Jutt Badshah","Jutt Badshah","Jutt Badshah",\n')
-
-    file.write(')\n')
-    jutt1 = compile(jutt, 'JUTT_BADSHAH', 'exec')
-    jutt2 = marshal.dumps(jutt1)
-    jutt3 = zlib.compress(jutt2)
-    jutt4 = base64.b64encode(jutt3)
-    jutt5 = repr(jutt4)
-    jutt6 = '# ECRYPT BY Jutt Badshah\n# Follow Github SHOOTER-MAKER\n\n\nimport marshal,zlib,base64\nexec marshal.loads(zlib.decompress(base64.b64decode("' + str(jutt5) + '")))'
-    jutt7 = compile(jutt6, 'JUTT_BADSHAH', 'exec')
-    jutt8 = marshal.dumps(jutt7)
-    jutt9 = repr(jutt8)
-    file.write('# ECRYPT BY Jutt Badshah\n# Follow Github SHOOTER-MAKER\n\n\nimport marshal\nexec marshal.loads(' + jutt9 + ')\n\n\n')
-    file.write('juttbadshah=(\n')
-    for i in range(3000):
+    
         file.write('"Jutt Badshah","Jutt Badshah","Jutt Badshah","Jutt Badshah",\n')
 
     file.write(')\n')
