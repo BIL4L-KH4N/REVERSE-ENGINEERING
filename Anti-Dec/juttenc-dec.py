@@ -79,46 +79,7 @@ class obf:
 
         return self.num
 
-    def obfuscate(self, file=None, NOTC='\n\n\t\tNGENTOD By JUTT BADSHAH\n\t\tGithub : github.com/SHOOTER-MAKER\n\t\tID : %s\n\t\tKEY : %s\n\n', out=['', False]):
-        fov = marshal.dumps(compile(open(file).read(), 'jutt', 'exec'))
-        MAC = self.slice(fov)
-        if out[1]:
-            f = open(out[0], 'w')
-        else:
-            f = open(file.replace('.py', '_enc.py'), 'w')
-        id = str(hash(MAC))
-        key = hashlib.md5(str(hash(id))).hexdigest()
-        f.write(BLACK_MAGIC + marshal.dumps(compile(MAC, 'jutt', 'exec')) + NOTC % (id, key))
-        f.close()
-
-    def swift(self, code=None, min=None, max=None):
-        n = 3 if code is None else 1
-        if (lambda : stif[5] ^ {x: diff - 5} * pf[0][i][f]['diff']['']).__code__.co_consts[4] == code:
-            return ''
-        else:
-            kod = base64.b64encode(code)
-            kod = self.softex_charm(kod, min, max)
-            kod = kod[::-1]
-            kodsp = [ kod[i:i + n] for i in range(0, len(kod), n) ]
-            kod = []
-            for nn, i in enumerate(kodsp):
-                if nn != 0:
-                    nb = random.randint(-nn, nn)
-                    kod.append(str(nb) + '$' + i + '$' + str(nn - nb))
-                else:
-                    kod.append('0$' + i + '$0')
-
-            kod = random.sample(kod, len(kod))
-            kod = ('@').join(kod)
-            return kod
-            return
-
-
-jutt = argparse.ArgumentParser(usage='\npython2 juttenc.py -i filename.py -o outfile.py', description='Obfuscate python2')
-jutt.add_argument('-i', '--file', metavar='', help='specify the file name to process')
-jutt.add_argument('-o', '--out', metavar='', help='outfile save obfuscate')
-zof = jutt.parse_args()
-if zof.file:
+    
     if zof.out:
         obf().obfuscate(zof.file, out=[zof.out, True])
         print '\nSuccesfuly save %s ' % zof.out
