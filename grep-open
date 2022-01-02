@@ -1,0 +1,77 @@
+#coding=utf-8
+#!/usr/bin/python2
+#This Script Write By BILAL KHAN
+try:
+    import os
+    import sys
+    import time
+except ImportError:
+    os.system('git pull')
+
+###LOGO###
+logo = '\x1b[1;37m\n\x1b[1;94m########  #### ##        #########  ##\n\x1b[1;94m##     ##  ##  ##       ##       ## ##\n\x1b[1;92m##     ##  ##  ##       ##       ## ##\n\x1b[1;92m########   ##  ##       ########### ##\n\x1b[1;92m##     ##  ##  ##       ##       ## ##\n\x1b[1;94m##     ##  ##  ##       ##       ## ##\n\x1b[1;94m########  #### ######## ##       ## ########\n\x1b[1;92m-----------------------------------------------\n\x1b[1;92m[\xe2\x9c\x93] \x1b[1;93mMAKER       :   BILAL KHAN\n\x1b[1;92m[\xe2\x9c\x93]\x1b[1;93m FACEBOOK    :   \xe2\x88\x86\xe2\x88\x86\xe2\x88\x86\xe2\x88\x86\xe2\x88\x86\xe2\x88\x86\xe2\x88\x86\xe2\x88\x86\n\x1b[1;92m[\xe2\x9c\x93] \x1b[1;93mWHATSAPP    :   +923485664243\n\x1b[1;92m[\xe2\x9c\x93] \x1b[1;96mChange Is The Unchangeable Law Of Nature\n\x1b[1;92m-----------------------------------------------'
+def main():
+    os.system('clear')
+    os.system("touch .b.txt")
+    print(logo)
+    os.system('\x1b[1;31mtermux-setup-storage')
+    os.system('clear')
+    time.sleep(0.5)
+    print(logo)
+    print''
+    print(' \x1b[1;32m[1] Start Grepping')
+    print(' [2] Follow BILAL')
+    print(' [3] Exit')
+    print("")
+    bsn()
+def bsn():
+    s = raw_input("\033[1;33m Select : \033[0;97m ")
+    if s =="1":
+        grep()
+    elif s =="2":
+        owner()
+    elif s =="3":
+        os.system('clear')
+        print(logo)
+        print''
+        print('\x1b[1;31m $$ Exit Successfully')
+    else:
+        print("")
+        print("\033[1;31m Select valid option \033[0;97m")
+        print("")
+        bsn()
+def grep():
+    os.system('clear')
+    os.system('rm -rf .bs.txt')
+    os.system('cd $Home')
+    os.system('rm -rf .bs.txt')
+    print(logo)
+    print('')
+    f= raw_input('\x1b[1;33m[✓] File Path :\x1b[1;32m ')
+    g= raw_input('\x1b[1;33m[✓] Grep :\x1b[1;32m ')
+    o= raw_input('\x1b[1;33m[✓] OutPut : \x1b[1;32m')
+    os.system('touch ' +o)
+    os.system('mv '+f+' .b.txt')
+    os.system('cat .b.txt | grep '+g+' > ' +o)
+    os.system('mv .b.txt ' +f)
+    print(' \x1b[1;37mSuccessfully Done')
+    time.sleep(0.5)
+    os.system('clear')
+    time.sleep(1)
+    print(logo)
+    print''
+    print('\x1b[1;32m-----------------------------------------------')
+    print(' \x1b[1;33mYour Grep File path\x1b[1;32m ' +o)
+    print('\x1b[1;32m-----------------------------------------------')
+    print''
+    raw_input("\033[1;33m press enter to go back \033[0;97m ")
+    main()       
+    
+def owner():
+    os.system('clear')
+    print logo
+    print''
+    os.system('xdg-open https://www.facebook.com/100022047961256')
+    main()      
+if __name__ == '__main__':
+	main()
